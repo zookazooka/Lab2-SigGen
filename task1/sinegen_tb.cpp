@@ -25,7 +25,6 @@ int main(int argc, char ** argv, char ** env){
     top -> rst = 0;
     top -> en = 1;
     //vbdValue() is function that returns value given by vbdFlag when it is 1/rotary switch on vbuddy is pressed.
-    top -> incr = 1;
 
     for(simcyc = 0; simcyc < MAX_SIM_CYC; simcyc++){
         for(clk = 0; clk < 2; clk++){
@@ -38,6 +37,8 @@ int main(int argc, char ** argv, char ** env){
         // plot ROM output and print cycle count
         vbdPlot(int(top -> dout), 0, 255);
         vbdCycle(simcyc);
+
+        top -> en = vbdFlag();
 
         // either simulation finished, or 'q' is pressed
         if ((Verilated::gotFinish()) || (vbdGetkey()=='q')) 

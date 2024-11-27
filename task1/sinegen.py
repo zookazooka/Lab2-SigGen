@@ -17,9 +17,9 @@ for i in range(256):
     #Below conditions are for definining the format of the rom.
     if (i+1)%16 == 0: 
         #after making 16 columns, it creates newline and moves to nextline 
-        s = "{hex:2X}\n" 
+        s = "{hex:2X}\n" `
     else: 
-        #else, it will continously create new 2 digit hex values with a space in between. 
+        #else, it will continously create ne`w 2 digit hex values with a space in between. 
         s = "{hex:2X} " 
 
     #below line essentially adds 256 data values into the ROM 
